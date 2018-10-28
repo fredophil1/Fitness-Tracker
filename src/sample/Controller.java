@@ -29,6 +29,12 @@ public class Controller  {
     ObservableList<String> palvalueList4 = FXCollections.observableArrayList("1.8","1.9");
     ObservableList<String> palvalueList5 = FXCollections.observableArrayList("2.0","2.1","2.2","2.3","2.4");
 
+    ObservableList<String> mealList = FXCollections.observableArrayList("Frühstück", "Mittagessen", "Abendessen", "Snack");
+
+    ObservableList<String> cardioList = FXCollections.observableArrayList(  "Crosstrainer","Joggen", "Radfahren","Schwimmen", "Stairmaster");
+
+    ObservableList<String> trainingList = FXCollections.observableArrayList(  "Arme", "Beine", "Brust", "Rücken","Schultern");
+
 
     //Views
     @FXML private TextField firstname;
@@ -39,9 +45,13 @@ public class Controller  {
 
     @FXML private ComboBox activity;
     @FXML private ComboBox palvalue;
+    @FXML private ComboBox meals;
+    @FXML private ComboBox cardio;
+    @FXML private ComboBox training;
 
     @FXML private JFXRadioButton male;
     @FXML private JFXRadioButton female;
+
     @FXML private JFXCheckBox sportActivity;
 
     @FXML private Label bmi;
@@ -64,11 +74,18 @@ public class Controller  {
 
     @FXML
     private void initialize( ){
+
         activity.setValue("liegende oder sitzende Lebensweise");
         activity.setItems(activityList);
 
         palvalue.setValue("1.2");
         palvalue.setItems(palvalueList1);
+
+        meals.setItems(mealList);
+
+        cardio.setItems(cardioList);
+
+        training.setItems(trainingList);
 
     }
 
