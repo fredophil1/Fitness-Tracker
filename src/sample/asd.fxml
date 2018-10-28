@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="pane" fx:id="Controller1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #B2D732;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <VBox maxWidth="800.0" spacing="15.0">
+         <children>
+            <AnchorPane maxWidth="600.0" prefHeight="82.0" prefWidth="0.0" style="-fx-background-color: #383838;">
+               <children>
+                  <HBox layoutX="32.0" layoutY="10.0" prefHeight="64.0" prefWidth="400.0" spacing="50.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="80.0">
+                     <children>
+                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/calculator.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/calendar.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/strong.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/food.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/statistics.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/gear.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="507.0" prefWidth="600.0" style="-fx-background-color: #383838;">
+               <children>
+                  <VBox layoutX="25.0" prefHeight="411.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="50.0">
+                     <children>
+                        <HBox spacing="25.0">
+                           <children>
+                              <VBox prefHeight="386.0" prefWidth="399.0" spacing="10.0">
+                                 <children>
+                                    <HBox minWidth="-Infinity" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="74.0" text="Vorname" textFill="#dded9c">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="firstname" prefHeight="25.0" prefWidth="315.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="74.0" text="Nachname" textFill="#dded9c" />
+                                          <TextField fx:id="lastname" prefHeight="25.0" prefWidth="315.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="74.0" text="Geschlecht" textFill="#dded9c" />
+                                          <RadioButton fx:id="male" mnemonicParsing="false" text="männlich" textFill="#dded9c">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="gender" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="female" mnemonicParsing="false" text="weiblich" textFill="#dded9c" toggleGroup="$gender" />
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="74.0" text="Alter" textFill="#dded9c" />
+                                          <TextField fx:id="age" prefHeight="25.0" prefWidth="315.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="74.0" text="Größe" textFill="#dded9c" />
+                                          <TextField fx:id="size" prefHeight="25.0" prefWidth="315.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="74.0" text="Gewicht" textFill="#dded9c" />
+                                          <TextField fx:id="weight" prefHeight="25.0" prefWidth="315.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="74.0" text="Tätigkeit" textFill="#dded9c" />
+                                          <ComboBox fx:id="activity" onAction="#palValueChoice" prefHeight="25.0" prefWidth="310.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="74.0" text="PAL-Wert" textFill="#dded9c" />
+                                          <ComboBox fx:id="palvalue" prefHeight="25.0" prefWidth="315.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="74.0" text="Training" textFill="#dded9c" />
+                                          <RadioButton fx:id="sportActivity" mnemonicParsing="false" onAction="#sportActivity" text="mind. 3x Training/Woche" textFill="#dded9c" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <HBox spacing="5.0">
+                                 <children>
+                                    <VBox prefHeight="85.0" prefWidth="98.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="21.0" text="BMI" textFill="#dded9c" />
+                                          <Label text="Kalorien" textFill="#dded9c" />
+                                          <Label text="Kohlenhydrate" textFill="#dded9c" />
+                                          <Label text="Fett" textFill="#dded9c" />
+                                          <Label text="Protein" textFill="#dded9c" />
+                                       </children>
+                                    </VBox>
+                                    <VBox>
+                                       <children>
+                                          <Label fx:id="bmi" prefHeight="5.0" prefWidth="60.0" textFill="#dded9c" />
+                                          <Label fx:id="calories" prefHeight="5.0" prefWidth="60.0" textFill="#dded9c" />
+                                          <Label fx:id="carbs" prefHeight="5.0" prefWidth="60.0" textFill="#dded9c" />
+                                          <Label fx:id="fat" prefHeight="5.0" prefWidth="60.0" textFill="#dded9c" />
+                                          <Label fx:id="protein" prefHeight="5.0" prefWidth="60.0" textFill="#dded9c" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="108.0" prefWidth="614.0" spacing="30.0">
+                           <children>
+                              <JFXButton onAction="#calculate" prefHeight="60.0" prefWidth="120.0" ripplerFill="#363636" style="-fx-background-color: B2D732;" text="Berechnen" textAlignment="CENTER" textFill="#383838">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="120.0" ripplerFill="#383838" style="-fx-background-color: B2D732;" text="Speichern" textAlignment="CENTER" textFill="#383838">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

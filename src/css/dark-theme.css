@@ -1,0 +1,108 @@
+
+*{
+-fx-primary: #383838;
+-fx-primaryText: #dded9c;
+-fx-secondary: #B2D732;
+}
+
+.root{
+   -fx-background-color: -fx-primary;
+}
+
+.button{
+-fx-text-fill: -fx-primaryText;
+}
+
+.main-button{
+-fx-border-color: -fx-secondary;
+-fx-border-radius: 35px;
+-fx-background-radius: 35px;
+
+}
+
+.main-button:hover {
+-fx-border-color: -fx-secondary;
+-fx-background-color: -fx-secondary;
+-fx-text-fill: -fx-primary;
+}
+
+.tab{
+
+	-fx-background-color: -fx-primary;
+	
+}
+
+.tab-header-background{
+
+    -fx-background-color: -fx-primary;
+
+}
+
+
+.menu-bar{
+
+    -fx-base: -fx-primary;
+    -fx-background-color: -fx-primary;
+
+}
+
+.context-menu
+{
+
+-fx-background-color: derive(-fx-primary, 20%);
+
+}
+
+.jfx-text-field{
+
+ -fx-text-inner-color: -fx-primaryText;
+
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFX Combo Box                                                          *
+ *                                                                             *
+ ******************************************************************************/
+
+
+
+.jfx-combo-box {
+	-fx-background-color:   -fx-primary;
+	-fx-text-fill: -fx-primaryText;
+}
+
+.jfx-combo-box .cell {
+     -fx-text-fill: -fx-primaryText;
+ }
+
+
+.combo-box-popup .list-view .jfx-list-cell {
+    -fx-background-insets: 0.0;
+    -fx-text-fill: -fx-primaryText;
+}
+
+.combo-box-popup .list-view .jfx-list-cell:odd,
+.combo-box-popup .list-view .jfx-list-cell:even {
+    -fx-background-color: derive(-fx-primary, 20%);
+}
+
+.combo-box-popup .list-view .jfx-list-cell:filled:hover {
+    -fx-text-fill: -fx-primaryText;
+}
+
+
+
+/*******************************************************************************
+ *                                                                             *
+ * JFX Radio Button                                                            *
+ *                                                                             *
+ ******************************************************************************/
+
+.jfx-radio-button{
+    -jfx-selected-color: -fx-secondary;
+    -jfx-unselected-color: -fx-secondary;
+}
+
+
+
