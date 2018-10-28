@@ -14,7 +14,7 @@ public class CaloriesLogic {
     private double size;
     private double calories;
 
-    private double palvalue = 1.5;
+    private double palvalue;
 
     private double bmi;
     private double carbs;
@@ -36,9 +36,6 @@ public class CaloriesLogic {
     }
 
     public boolean calcpalvalue (){
-
-
-
 
 
         return true;
@@ -110,6 +107,7 @@ public class CaloriesLogic {
     }
 
     public double getCalories() {
+        calories = Math.round(calories*100.0)/100.0;
         return calories;
     }
 
@@ -126,18 +124,22 @@ public class CaloriesLogic {
     }
 
     public double getCarbs() {
+        carbs = Math.round(carbs*100.0)/100.0;
         return carbs;
     }
 
     public double getFat() {
+        fat = Math.round(fat*100.0)/100.0;
         return fat;
     }
 
     public double getProtein() {
+        protein = Math.round(protein*100.0)/100.0;
         return protein;
     }
 
     public double getBmi() {
+        bmi = Math.round(bmi*100.0)/100.0;
         return bmi;
     }
 
