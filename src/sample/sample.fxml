@@ -115,7 +115,7 @@
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefWidth="65.0" text="Alter" textFill="#dded9c" />
-                                                                  <JFXTextField fx:id="age" focusColor="#fe2712" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                  <JFXTextField fx:id="age" focusColor="#fe2712" onKeyTyped="#ageIntOnly" prefWidth="50.0" unFocusColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                             <HBox spacing="10.0">
@@ -201,7 +201,7 @@
                                                 <Font size="16.0" />
                                              </font>
                                           </JFXButton>
-                                          <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="120.0" ripplerFill="#383838" styleClass="main-button" text="Speichern" textAlignment="CENTER">
+                                          <JFXButton buttonType="RAISED" onAction="#save" prefHeight="60.0" prefWidth="120.0" ripplerFill="#383838" styleClass="main-button" text="Speichern" textAlignment="CENTER">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>

@@ -24,7 +24,7 @@ public class CaloriesLogic {
     //berechnet den täglichen Kalorienbedarf für einen Mann im Ruhezustand
     public double male() {
 
-        return  ((10 * weight) + (6.25 * size) - (5 * age) + 5);
+        return ((10 * weight) + (6.25 * size) - (5 * age) + 5);
 
     }
 
@@ -35,7 +35,7 @@ public class CaloriesLogic {
 
     }
 
-    public boolean calcpalvalue (){
+    public boolean calcpalvalue() {
 
 
         return true;
@@ -44,26 +44,24 @@ public class CaloriesLogic {
     //berechnet den täglichen Kalorienbedarf einer Person incl. Bewegung
     public double pal() {
 
-        if (genderMale == true && sportpalvalue == true ) {
-            setCalories(male()* (palvalue+0.3));
+        if (genderMale == true && sportpalvalue == true) {
+            setCalories(male() * (palvalue + 0.3));
             return male() * palvalue;
         }
 
-        if ( genderFemale == true && sportpalvalue == true ) {
-            setCalories(female()* (palvalue+0.3));
+        if (genderFemale == true && sportpalvalue == true) {
+            setCalories(female() * (palvalue + 0.3));
             return female() * palvalue;
         }
 
-        if (genderMale == true ) {
-            setCalories(male()* palvalue);
+        if (genderMale == true) {
+            setCalories(male() * palvalue);
             return male() * palvalue;
         }
-        if ( genderFemale == true ) {
-            setCalories(female()* palvalue);
+        if (genderFemale == true) {
+            setCalories(female() * palvalue);
             return female() * palvalue;
-        }
-
-        else {
+        } else {
             return 404;
         }
 
@@ -72,10 +70,10 @@ public class CaloriesLogic {
     //berechnet die tägliche Kalorienverteilung von Fett, Kohlenhydraten & Protein auf Basis des täglichen Kalorienbedarf incl. Bewegung
     public boolean nutrition() {
 
-        setFat(weight*1);
-        setProtein(weight*2.5);
+        setFat(weight * 1);
+        setProtein(weight * 2.5);
 
-        setCarbs((calories-(weight*1*9.3)-(weight*2.5*4.1))/4.1);
+        setCarbs((calories - (weight * 1 * 9.3) - (weight * 2.5 * 4.1)) / 4.1);
 
 
         return true;
@@ -83,9 +81,9 @@ public class CaloriesLogic {
     }
 
     //berechnet den aktuelle BMI der Person
-    public boolean bmi(){
+    public boolean bmi() {
 
-        setBmi(weight / (( size/100) *( size/100)));
+        setBmi(weight / ((size / 100) * (size / 100)));
 
         return true;
     }
@@ -107,7 +105,7 @@ public class CaloriesLogic {
     }
 
     public double getCalories() {
-        calories = Math.round(calories*100.0)/100.0;
+        calories = Math.round(calories * 100.0) / 100.0;
         return calories;
     }
 
@@ -124,22 +122,22 @@ public class CaloriesLogic {
     }
 
     public double getCarbs() {
-        carbs = Math.round(carbs*100.0)/100.0;
+        carbs = Math.round(carbs * 100.0) / 100.0;
         return carbs;
     }
 
     public double getFat() {
-        fat = Math.round(fat*100.0)/100.0;
+        fat = Math.round(fat * 100.0) / 100.0;
         return fat;
     }
 
     public double getProtein() {
-        protein = Math.round(protein*100.0)/100.0;
+        protein = Math.round(protein * 100.0) / 100.0;
         return protein;
     }
 
     public double getBmi() {
-        bmi = Math.round(bmi*100.0)/100.0;
+        bmi = Math.round(bmi * 100.0) / 100.0;
         return bmi;
     }
 
@@ -191,7 +189,7 @@ public class CaloriesLogic {
         this.genderMale = male;
     }
 
-    public void setGenderFemale (boolean female) {
+    public void setGenderFemale(boolean female) {
         this.genderFemale = female;
     }
 
