@@ -25,8 +25,10 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import sample.DecimalNumberField?>
+<?import sample.NumberField?>
 
-<StackPane stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<StackPane stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <BorderPane>
          <center>
@@ -115,7 +117,7 @@
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefWidth="65.0" text="Alter" textFill="#dded9c" />
-                                                                  <JFXTextField fx:id="age" focusColor="#fe2712" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                  <NumberField fx:id="age" focusColor="#fe2712" prefWidth="50.0" unFocusColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                             <HBox spacing="10.0">
@@ -134,7 +136,7 @@
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefWidth="65.0" text="Größe" textFill="#dded9c" />
-                                                                  <JFXTextField fx:id="size" focusColor="#fe2712" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                  <DecimalNumberField fx:id="size" focusColor="#fe2712" prefWidth="50.0" unFocusColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                             <HBox spacing="10.0">
@@ -150,7 +152,7 @@
                                                             <HBox spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefWidth="65.0" text="Gewicht" textFill="#dded9c" />
-                                                                  <JFXTextField fx:id="weight" focusColor="#fe2712" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                  <DecimalNumberField fx:id="weight" focusColor="#fe2712" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                             <HBox spacing="10.0" />
@@ -208,6 +210,7 @@
                                           </JFXButton>
                                        </children>
                                     </HBox>
+                                    <JFXDatePicker defaultColor="#b2d732" />
                                  </children>
                               </VBox>
                            </children></AnchorPane>
