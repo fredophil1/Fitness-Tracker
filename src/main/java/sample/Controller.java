@@ -1,6 +1,7 @@
 package sample;
 
 import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import database.DBLogic;
 import javafx.collections.FXCollections;
@@ -10,6 +11,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import logic.CaloriesLogic;
+import org.apache.commons.lang3.StringUtils;
+
+import java.time.LocalDate;
 
 
 //Der Controller ist für die Logik des Interface zuständig
@@ -46,6 +50,13 @@ public class Controller {
     private TextField weight;
 
     @FXML
+    private DecimalNumberField carb_input;
+    @FXML
+    private DecimalNumberField fat_input;
+    @FXML
+    private DecimalNumberField protein_input;
+
+    @FXML
     private ComboBox activity;
     @FXML
     private ComboBox palvalue;
@@ -74,7 +85,11 @@ public class Controller {
     private Label fat;
     @FXML
     private Label protein;
+    @FXML
+    private Label calories_sum;
 
+    @FXML
+    private JFXDatePicker datepicker1;
 
 
     //greift auf die Main Methode zu um das Window in der Main Methode zu schließen
@@ -101,6 +116,7 @@ public class Controller {
 
         training.setItems(trainingList);
 
+        datepicker1.setValue(LocalDate.now());
     }
 
 
@@ -185,7 +201,14 @@ public class Controller {
         carbs.setText(String.valueOf(caloriesLogic.getCarbs()));
         fat.setText(String.valueOf(caloriesLogic.getFat()));
         protein.setText(String.valueOf(caloriesLogic.getProtein()));
+    }
 
+    @FXML
+    private void calculateCalories() {
+        Double carb = Double.parseDouble(StringUtils.defaultIfEmpty(carb_input.getText(),"0"));
+        Double fat = Double.parseDouble(StringUtils.defaultIfEmpty(fat_input.getText(), "0"));
+        Double protein = Double.parseDouble(StringUtils.defaultIfEmpty(protein_input.getText(),"0"));
 
+        calories_sum.setText(String.valueOf(carb*4.1 + fat*9.3 + protein*4.1));
     }
 }

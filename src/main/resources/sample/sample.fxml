@@ -210,7 +210,7 @@
                                           </JFXButton>
                                        </children>
                                     </HBox>
-                                    <JFXDatePicker defaultColor="#b2d732" />
+                                    <JFXDatePicker fx:id="datepicker1" defaultColor="#b2d732" />
                                  </children>
                               </VBox>
                            </children></AnchorPane>
@@ -257,7 +257,7 @@
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Kohlenhydrate" textFill="#dded9c" />
-                                                                  <JFXTextField fx:id="lastname1" focusColor="#fe2712" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                  <DecimalNumberField fx:id="carb_input" focusColor="#fe2712" onKeyReleased="#calculateCalories" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                             <HBox prefWidth="330.0" spacing="10.0">
@@ -273,7 +273,7 @@
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Fett" textFill="#dded9c" />
-                                                                  <JFXTextField fx:id="lastname11" focusColor="#fe2712" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                  <DecimalNumberField fx:id="fat_input" focusColor="#fe2712" onKeyReleased="#calculateCalories" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                             <HBox prefWidth="330.0" spacing="10.0">
@@ -289,7 +289,7 @@
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Protein" textFill="#dded9c" />
-                                                                  <JFXTextField fx:id="lastname12" focusColor="#fe2712" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                  <DecimalNumberField fx:id="protein_input" focusColor="#fe2712" onKeyReleased="#calculateCalories" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                             <HBox prefWidth="330.0" spacing="10.0">
@@ -305,7 +305,7 @@
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Kalorien" textFill="#dded9c" />
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Leertext" textFill="#dded9c" />
+                                                                  <Label fx:id="calories_sum" contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" textFill="#dded9c" />
                                                                </children>
                                                             </HBox>
                                                             <HBox prefWidth="330.0" spacing="10.0">
@@ -389,7 +389,7 @@
                                                 <HBox prefWidth="330.0" spacing="10.0">
                                                    <children>
                                                       <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Dauer" textFill="#dded9c" />
-                                                      <JFXTextField focusColor="#fe2712" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                      <NumberField fx:id="duration_input" focusColor="#fe2712" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
                                                       <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="50.0" text="Minuten" textFill="#dded9c" />
                                                    </children>
                                                 </HBox>
