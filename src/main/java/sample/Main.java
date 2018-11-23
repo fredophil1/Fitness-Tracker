@@ -1,20 +1,13 @@
 package sample;
 
-import database.DBLogic;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class Main extends Application {
 
@@ -38,7 +31,7 @@ public class Main extends Application {
 
         try {
 
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("sample.fxml"));
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("/sample/sample.fxml"));
             StackPane pane = loader.load();
 
             primaryStage.setMinHeight(300);

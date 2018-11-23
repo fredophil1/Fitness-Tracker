@@ -36,7 +36,7 @@
                      <graphic>
                         <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/calculator.png" />
+                              <Image url="@../images/calculator.png" />
                            </image></ImageView>
                      </graphic>
                      <content>
@@ -115,7 +115,7 @@
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefWidth="65.0" text="Alter" textFill="#dded9c" />
-                                                                  <JFXTextField fx:id="age" focusColor="#fe2712" onKeyTyped="#ageIntOnly" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                  <JFXTextField fx:id="age" focusColor="#fe2712" prefWidth="50.0" unFocusColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                             <HBox spacing="10.0">
@@ -183,7 +183,7 @@
                                                             <HBox spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefWidth="65.0" text="Training" textFill="#dded9c" />
-                                                                  <JFXCheckBox fx:id="sportActivity" checkedColor="#b2d732" onAction="#sportActivity" text="mind. 3x Training pro Woche" textFill="#dded9c" unCheckedColor="#b2d732" />
+                                                                  <JFXCheckBox fx:id="sportActivity" checkedColor="#b2d732" text="mind. 3x Training pro Woche" textFill="#dded9c" unCheckedColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                          </children>
@@ -217,7 +217,7 @@
                      <graphic>
                         <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/food.png" />
+                              <Image url="@../images/food.png" />
                            </image></ImageView>
                      </graphic>
                      <content>
@@ -338,7 +338,7 @@
                      <graphic>
                         <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/strong.png" />
+                              <Image url="@../images/strong.png" />
                            </image></ImageView>
                      </graphic>
                      <content>
@@ -413,7 +413,7 @@
                      <graphic>
                         <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/statistics.png" />
+                              <Image url="@../images/statistics.png" />
                            </image></ImageView>
                      </graphic>
                      <content>
@@ -450,7 +450,7 @@
                      <graphic>
                         <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/calendar.png" />
+                              <Image url="@../images/calendar.png" />
                            </image></ImageView>
                      </graphic>
                      <content>

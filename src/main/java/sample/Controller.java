@@ -1,31 +1,19 @@
 package sample;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXRadioButton;
-import com.jfoenix.validation.NumberValidator;
-import com.jfoenix.validation.RequiredFieldValidator;
 import database.DBLogic;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import logic.CaloriesLogic;
 
-import java.awt.*;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
-
 
 //Der Controller ist für die Logik des Interface zuständig
-public class Controller implements Initializable {
+public class Controller {
 
     CaloriesLogic caloriesLogic = new CaloriesLogic();
 
@@ -197,23 +185,6 @@ public class Controller implements Initializable {
         carbs.setText(String.valueOf(caloriesLogic.getCarbs()));
         fat.setText(String.valueOf(caloriesLogic.getFat()));
         protein.setText(String.valueOf(caloriesLogic.getProtein()));
-
-
-    }
-
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-        RequiredFieldValidator validator = new RequiredFieldValidator();
-        NumberValidator numValidator = new NumberValidator();
-
-
-
-
-        numValidator.setMessage("Only Numbers");
-
-
 
 
     }
