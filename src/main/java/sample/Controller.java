@@ -87,6 +87,14 @@ public class Controller {
     private Label protein;
     @FXML
     private Label calories_sum;
+    @FXML
+    private Label carbs_daily;
+    @FXML
+    private Label fat_daily;
+    @FXML
+    private Label protein_daily;
+    @FXML
+    private Label calories_daily;
 
     @FXML
     private JFXDatePicker datepicker1;
@@ -203,6 +211,8 @@ public class Controller {
         carbs.setText(String.valueOf(caloriesLogic.getCarbs()));
         fat.setText(String.valueOf(caloriesLogic.getFat()));
         protein.setText(String.valueOf(caloriesLogic.getProtein()));
+
+        updateDailyNeed();
     }
 
     @FXML
@@ -212,5 +222,36 @@ public class Controller {
         Double protein = Double.parseDouble(StringUtils.defaultIfEmpty(protein_input.getText(),"0"));
 
         calories_sum.setText(String.valueOf(carb*4.1 + fat*9.3 + protein*4.1));
+        updateDailyNeed();
+    }
+
+    @FXML
+    private void updateDailyNeed() {
+        Double mealCarb = Double.parseDouble(StringUtils.defaultIfEmpty(carb_input.getText(),"0"));
+        Double mealFat = Double.parseDouble(StringUtils.defaultIfEmpty(fat_input.getText(), "0"));
+        Double mealProtein = Double.parseDouble(StringUtils.defaultIfEmpty(protein_input.getText(),"0"));
+        Double mealCalories = Double.parseDouble(StringUtils.defaultIfEmpty(calories_sum.getText(),"0"));
+
+        Double dailyCarbs = Double.parseDouble(StringUtils.defaultIfEmpty(carbs.getText(),"0"));
+        Double dailyFat = Double.parseDouble(StringUtils.defaultIfEmpty(fat.getText(), "0"));
+        Double dailyProtein = Double.parseDouble(StringUtils.defaultIfEmpty(protein.getText(),"0"));
+        Double dailyCalories = Double.parseDouble(StringUtils.defaultIfEmpty(calories.getText(),"0"));
+
+
+        if (dailyCarbs > 0) {
+            carbs_daily.setText(String.valueOf((mealCarb/dailyCarbs)*100));
+        }
+
+        if (dailyFat > 0) {
+            fat_daily.setText(String.valueOf((mealFat/dailyFat)*100));
+        }
+
+        if (dailyProtein > 0) {
+            protein_daily.setText(String.valueOf((mealProtein/dailyProtein)*100));
+        }
+
+        if (dailyCalories > 0) {
+            calories_daily.setText(String.valueOf((mealCalories/dailyCalories)*100));
+        }
     }
 }

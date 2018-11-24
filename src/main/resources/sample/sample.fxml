@@ -262,7 +262,7 @@
                                                             </HBox>
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="30.0" text="0.00" textFill="#dded9c" />
+                                                                  <Label fx:id="carbs_daily" contentDisplay="CENTER" prefHeight="17.0" prefWidth="30.0" text="0.00" textFill="#dded9c" />
                                                                   <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="\%" textFill="#dded9c" />
                                                                </children>
                                                             </HBox>
@@ -278,7 +278,7 @@
                                                             </HBox>
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="30.0" text="0.00" textFill="#dded9c" />
+                                                                  <Label fx:id="fat_daily" contentDisplay="CENTER" prefHeight="17.0" prefWidth="30.0" text="0.00" textFill="#dded9c" />
                                                                   <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="\%" textFill="#dded9c" />
                                                                </children>
                                                             </HBox>
@@ -294,7 +294,7 @@
                                                             </HBox>
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="30.0" text="0.00" textFill="#dded9c" />
+                                                                  <Label fx:id="protein_daily" contentDisplay="CENTER" prefHeight="17.0" prefWidth="30.0" text="0.00" textFill="#dded9c" />
                                                                   <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="\%" textFill="#dded9c" />
                                                                </children>
                                                             </HBox>
@@ -310,7 +310,7 @@
                                                             </HBox>
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="30.0" text="0.00" textFill="#dded9c" />
+                                                                  <Label fx:id="calories_daily" contentDisplay="CENTER" prefHeight="17.0" prefWidth="100.0" text="0.00" textFill="#dded9c" />
                                                                   <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="\%" textFill="#dded9c" />
                                                                </children>
                                                             </HBox>
