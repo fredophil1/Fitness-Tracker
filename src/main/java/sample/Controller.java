@@ -144,6 +144,8 @@ public class Controller {
             palvalue.setItems(palvalueList5);
         } else {
         }
+
+        calculate();
     }
 
 
@@ -164,31 +166,31 @@ public class Controller {
     @FXML
     private void calculate() {
 
-        caloriesLogic.setAge(Double.parseDouble(age.getText()));
-        caloriesLogic.setSize(Double.parseDouble(size.getText()));
-        caloriesLogic.setWeight(Double.parseDouble(weight.getText()));
+        caloriesLogic.setAge(Double.parseDouble(StringUtils.defaultIfEmpty(age.getText(), "0")));
+        caloriesLogic.setSize(Double.parseDouble(StringUtils.defaultIfEmpty(size.getText(), "0")));
+        caloriesLogic.setWeight(Double.parseDouble(StringUtils.defaultIfEmpty(weight.getText(), "0")));
 
         String i = palvalue.getSelectionModel().getSelectedItem().toString();
 
         caloriesLogic.setPalvalue(Double.parseDouble(i));
+        caloriesLogic.setGenderMale(male.isSelected());
+        caloriesLogic.setGenderFemale(female.isSelected());
+        caloriesLogic.setSportpalvalue(sportActivity.isSelected());
 
-
-        if (male.isSelected()) {
-            caloriesLogic.setGenderMale(true);
-            caloriesLogic.setGenderFemale(false);
-        }
-
-        if (female.isSelected()) {
-            caloriesLogic.setGenderMale(false);
-            caloriesLogic.setGenderFemale(true);
-        }
-
-
-        if (sportActivity.isSelected()) {
-            caloriesLogic.setSportpalvalue(true);
-        } else {
-            caloriesLogic.setSportpalvalue(false);
-        }
+//        if (male.isSelected()) {
+//            caloriesLogic.setGenderMale(true);
+//            caloriesLogic.setGenderFemale(false);
+//        }
+//
+//        if (female.isSelected()) {
+//            caloriesLogic.setGenderMale(false);
+//            caloriesLogic.setGenderFemale(true);
+//        }
+//        if (sportActivity.isSelected()) {
+//            caloriesLogic.setSportpalvalue(true);
+//        } else {
+//            caloriesLogic.setSportpalvalue(false);
+//        }
 
 
         caloriesLogic.bmi();

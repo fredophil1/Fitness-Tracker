@@ -94,12 +94,12 @@
                                                                   <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="65.0" text="Geschlecht" textFill="#dded9c" />
                                                                   <HBox prefWidth="150.0" spacing="15.0">
                                                                      <children>
-                                                                        <JFXRadioButton fx:id="male" selected="true" text="männlich" textFill="#dded9c">
+                                                                        <JFXRadioButton fx:id="male" onAction="#calculate" selected="true" text="männlich" textFill="#dded9c" toggleGroup="$gender">
                                                                            <toggleGroup>
                                                                               <ToggleGroup fx:id="gender" />
                                                                            </toggleGroup>
                                                                         </JFXRadioButton>
-                                                                        <JFXRadioButton fx:id="female" text="weiblich" textFill="#dded9c" toggleGroup="$gender" />
+                                                                        <JFXRadioButton fx:id="female" onAction="#calculate" text="weiblich" textFill="#dded9c" toggleGroup="$gender" />
                                                                      </children>
                                                                   </HBox>
                                                                </children>
@@ -117,7 +117,7 @@
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefWidth="65.0" text="Alter" textFill="#dded9c" />
-                                                                  <NumberField fx:id="age" focusColor="#fe2712" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                  <NumberField fx:id="age" focusColor="#fe2712" onKeyTyped="#calculate" prefWidth="50.0" unFocusColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                             <HBox spacing="10.0">
@@ -136,7 +136,7 @@
                                                             <HBox prefWidth="330.0" spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefWidth="65.0" text="Größe" textFill="#dded9c" />
-                                                                  <DecimalNumberField fx:id="size" focusColor="#fe2712" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                  <DecimalNumberField fx:id="size" focusColor="#fe2712" onKeyTyped="#calculate" prefWidth="50.0" unFocusColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                             <HBox spacing="10.0">
@@ -152,7 +152,7 @@
                                                             <HBox spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefWidth="65.0" text="Gewicht" textFill="#dded9c" />
-                                                                  <DecimalNumberField fx:id="weight" focusColor="#fe2712" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                  <DecimalNumberField fx:id="weight" focusColor="#fe2712" onKeyTyped="#calculate" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                             <HBox spacing="10.0" />
@@ -174,7 +174,7 @@
                                                             <HBox spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefWidth="65.0" text="PAL-Wert" textFill="#dded9c" />
-                                                                  <JFXComboBox fx:id="palvalue" focusColor="#fe2712" prefHeight="25.0" prefWidth="69.0" unFocusColor="#b2d732" />
+                                                                  <JFXComboBox fx:id="palvalue" focusColor="#fe2712" onAction="#calculate" prefHeight="25.0" prefWidth="69.0" unFocusColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                             <HBox spacing="10.0" />
@@ -185,7 +185,7 @@
                                                             <HBox spacing="10.0">
                                                                <children>
                                                                   <Label contentDisplay="CENTER" prefWidth="65.0" text="Training" textFill="#dded9c" />
-                                                                  <JFXCheckBox fx:id="sportActivity" checkedColor="#b2d732" text="mind. 3x Training pro Woche" textFill="#dded9c" unCheckedColor="#b2d732" />
+                                                                  <JFXCheckBox fx:id="sportActivity" checkedColor="#b2d732" onAction="#calculate" text="mind. 3x Training pro Woche" textFill="#dded9c" unCheckedColor="#b2d732" />
                                                                </children>
                                                             </HBox>
                                                          </children>
