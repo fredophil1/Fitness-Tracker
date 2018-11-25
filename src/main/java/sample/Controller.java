@@ -164,11 +164,26 @@ public class Controller {
 
         DBLogic db = new DBLogic();
 
+
+    // Castet den Inhalt der ComboBox PalValue in ein Double
+        String palvalueString = String.valueOf(palvalue.getValue());
+        double palvalueDouble = Double.parseDouble(palvalueString);
+
         db.connection();
-        db.dbInsert(firstname.getText(),lastname.getText(),Integer.parseInt(age.getText()),Integer.parseInt(size.getText()));
+        db.dbInsertClient(firstname.getText(),lastname.getText(),Integer.parseInt(age.getText()),Integer.parseInt(size.getText()),Double.parseDouble(weight.getText()),String.valueOf(activity.getValue()),palvalueDouble,sportActivity.isSelected());
+        db.connectionClose();
 
     }
 
+
+    @FXML
+    private void saveMeals(){
+
+        DBLogic db = new DBLogic();
+        db.connection();
+        db.dbInsertMeals(String.valueOf(meals.getValue()),Double.parseDouble(carb_input.getText()),Double.parseDouble(fat_input.getText()),Double.parseDouble(protein_input.getText()),Double.parseDouble(calories_sum.getText()));
+        db.connectionClose();
+    }
 
 
     // Button Controller Berechnen: berechnet BMI, Kalorien, Fett, Kohlenhydrate Protein

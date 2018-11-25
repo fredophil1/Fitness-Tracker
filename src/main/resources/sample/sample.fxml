@@ -327,7 +327,7 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" prefHeight="108.0" prefWidth="614.0" spacing="30.0">
                                                     <children>
-                                                        <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="120.0" ripplerFill="#383838" styleClass="main-button" text="Speichern" textAlignment="CENTER">
+                                                        <JFXButton buttonType="RAISED" onAction="#saveMeals" prefHeight="60.0" prefWidth="120.0" ripplerFill="#383838" styleClass="main-button" text="Speichern" textAlignment="CENTER">
                                                             <font>
                                                                 <Font size="16.0" />
                                                             </font>

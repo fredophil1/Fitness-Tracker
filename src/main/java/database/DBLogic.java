@@ -27,39 +27,41 @@ public class DBLogic {
 
     }
 
-    public int dbInsert(String firstname, String lastname, int age, int size) {
+    public void connectionClose() {
+
+        try {
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public int dbInsertClient(String firstname, String lastname, int age, int size, Double weight,String activity,Double palvalue,boolean sportActivity) {
 
         try {
             Statement stmt = con.createStatement();
-            return stmt.executeUpdate("INSERT INTO client (Vornamedb,Nachnamedb,Alterdb,Groeßedb) VALUES ('" + firstname + "', '" + lastname + "', '" + age + "', '" + size + "')");
+            return stmt.executeUpdate("INSERT INTO client (Vornamedb,Nachnamedb,Alterdb,Groeßedb,Gewichtdb,Taetigkeitdb,Palvaluedb,Trainingdb) VALUES ('" + firstname + "', '" + lastname + "', '" + age + "', '" + size + "','" + weight + "','" + activity + "','" + palvalue + "','" + sportActivity + "')");
 
         } catch (SQLException e) {
+            System.out.println("Daten Können nicht geschrieben werden");
             e.printStackTrace();
             return 0;
         }
 
-
     }
 
-}
+    public int dbInsertMeals(String meal,double mealCarbs,double mealFat,double mealProtein,double mealCalories) {
 
-
-
-
-
-/*
-    Connection con = null;
         try {
-        con = DriverManager.getConnection(CONNECTOR, USERNAME, PASSWORD);
-        System.out.println("Connected");
+            Statement stmt = con.createStatement();
+            return stmt.executeUpdate("INSERT INTO meals (Mahlzeitdb,Kohlenhydratedb,Fettdb,Proteindb,Kaloriendb) VALUES ('" + meal + "', '" + mealCarbs + "', '" + mealFat + "', '" + mealProtein + "','" + mealCalories + "')");
 
+        } catch (SQLException e) {
+            System.out.println("Daten Können nicht geschrieben werden");
+            e.printStackTrace();
+            return 0;
+        }
 
-    } catch (
-    SQLException e) {
-        System.out.println(e);
-    }finally {if(con != null){
-        con.close();
     }
-    }
-    */
-
+}
