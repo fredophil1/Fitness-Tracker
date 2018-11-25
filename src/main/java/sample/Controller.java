@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import logic.CaloriesLogic;
 import org.apache.commons.lang3.StringUtils;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 
@@ -221,8 +222,19 @@ public class Controller {
         Double fat = Double.parseDouble(StringUtils.defaultIfEmpty(fat_input.getText(), "0"));
         Double protein = Double.parseDouble(StringUtils.defaultIfEmpty(protein_input.getText(),"0"));
 
-        calories_sum.setText(String.valueOf(carb*4.1 + fat*9.3 + protein*4.1));
+        BigDecimal calories_sum_rounded;
+        BigDecimal calories_sum_rounded1 = new BigDecimal("1");
+        calories_sum_rounded = BigDecimal.valueOf(carb*4.1 + fat*9.3 + protein*4.1);
+        calories_sum_rounded = calories_sum_rounded.divide(calories_sum_rounded1,2,BigDecimal.ROUND_UP);
+
+        calories_sum.setText(String.valueOf(calories_sum_rounded));
+
         updateDailyNeed();
+
+      //  calories_sum.setText(String.valueOf(Math.round((carb*4.1 + fat*9.3 + protein*4.1)*100.0/100.0)));
+      //  updateDailyNeed();
+
+
     }
 
     @FXML
@@ -237,21 +249,36 @@ public class Controller {
         Double dailyProtein = Double.parseDouble(StringUtils.defaultIfEmpty(protein.getText(),"0"));
         Double dailyCalories = Double.parseDouble(StringUtils.defaultIfEmpty(calories.getText(),"0"));
 
+        double dailyCarbsPercentage;
+        dailyCarbsPercentage = (mealCarb/dailyCarbs)*100.0;
+        dailyCarbsPercentage = Math.round(dailyCarbsPercentage * 100.0) / 100.0;
+
+        double dailyFatPercentage;
+        dailyFatPercentage = (mealFat/dailyFat)*100.0;
+        dailyFatPercentage = Math.round(dailyFatPercentage * 100.0) / 100.0;
+
+        double dailyProteinPercentage;
+        dailyProteinPercentage = (mealProtein/dailyProtein)*100.0;
+        dailyProteinPercentage = Math.round(dailyProteinPercentage * 100.0) / 100.0;
+
+        double dailyCaloriesPercentage;
+        dailyCaloriesPercentage = (mealCalories/dailyCalories)*100.0;
+        dailyCaloriesPercentage = Math.round(dailyCaloriesPercentage * 100.0) / 100.0;
 
         if (dailyCarbs > 0) {
-            carbs_daily.setText(String.valueOf((mealCarb/dailyCarbs)*100));
+            carbs_daily.setText(String.valueOf(dailyCarbsPercentage));
         }
 
         if (dailyFat > 0) {
-            fat_daily.setText(String.valueOf((mealFat/dailyFat)*100));
+            fat_daily.setText(String.valueOf(dailyFatPercentage));
         }
 
         if (dailyProtein > 0) {
-            protein_daily.setText(String.valueOf((mealProtein/dailyProtein)*100));
+            protein_daily.setText(String.valueOf(dailyProteinPercentage));
         }
 
         if (dailyCalories > 0) {
-            calories_daily.setText(String.valueOf((mealCalories/dailyCalories)*100));
+            calories_daily.setText(String.valueOf(dailyCaloriesPercentage));
         }
     }
 }

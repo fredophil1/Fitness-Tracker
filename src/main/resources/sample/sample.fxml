@@ -28,462 +28,465 @@
 <?import sample.DecimalNumberField?>
 <?import sample.NumberField?>
 
-<StackPane stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <children>
-      <BorderPane>
-         <center>
-            <JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #383838;">
-               <tabs>
-                  <Tab>
-                     <graphic>
-                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/calculator.png" />
-                           </image></ImageView>
-                     </graphic>
-                     <content>
-                        <AnchorPane prefHeight="524.0" prefWidth="726.0">
-                           <children>
-                              <VBox alignment="CENTER" prefHeight="411.0" prefWidth="726.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                                       <VBox.margin>
-                                          <Insets left="50.0" right="50.0" />
-                                       </VBox.margin>
-                                       <children>
-                                          <HBox spacing="5.0">
-                                             <children>
-                                                <VBox spacing="15.0">
-                                                   <children>
+<!-- <?import sample.DecimalNumberField?> -->
+<!-- <?import sample.NumberField?> -->
+
+<StackPane stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <BorderPane>
+            <center>
+                <JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #383838;">
+                    <tabs>
+                        <Tab>
+                            <graphic>
+                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/calculator.png" />
+                                    </image></ImageView>
+                            </graphic>
+                            <content>
+                                <AnchorPane prefHeight="524.0" prefWidth="726.0">
+                                    <children>
+                                        <VBox alignment="CENTER" prefHeight="411.0" prefWidth="726.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                    <VBox.margin>
+                                                        <Insets left="50.0" right="50.0" />
+                                                    </VBox.margin>
+                                                    <children>
+                                                        <HBox spacing="5.0">
+                                                            <children>
+                                                                <VBox spacing="15.0">
+                                                                    <children>
                                                       <HBox spacing="65.0">
                                                          <children>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefWidth="65.0" text="Vorname" textFill="#dded9c" />
-                                                                  <JFXTextField fx:id="firstname" focusColor="#fe2712" prefWidth="200.0" unFocusColor="#b2d732" />
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox spacing="10.0">
-                                                               <children>
-                                                                  <Label prefWidth="80.0" text="BMI" textFill="#dded9c" />
-                                                                  <Label fx:id="bmi" text="" textFill="#dded9c" />
-                                                               </children>
-                                                            </HBox>
+                                                            <HBox prefHeight="28.0" prefWidth="10.0" spacing="10.0" />
+                                                                        <JFXDatePicker fx:id="datepicker1" defaultColor="#b2d732" prefHeight="28.0" prefWidth="159.0" />
                                                          </children>
                                                       </HBox>
-                                                      <HBox spacing="65.0">
-                                                         <children>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefWidth="65.0" text="Nachname" textFill="#dded9c" />
-                                                                  <JFXTextField fx:id="lastname" focusColor="#fe2712" prefWidth="200.0" unFocusColor="#b2d732" />
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox spacing="10.0">
-                                                               <children>
-                                                                  <Label prefWidth="80.0" text="Kalorien" textFill="#dded9c" />
-                                                                  <Label fx:id="calories" text="" textFill="#dded9c" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox spacing="65.0">
-                                                         <children>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="65.0" text="Geschlecht" textFill="#dded9c" />
-                                                                  <HBox prefWidth="150.0" spacing="15.0">
-                                                                     <children>
-                                                                        <JFXRadioButton fx:id="male" onAction="#calculate" selected="true" text="männlich" textFill="#dded9c" toggleGroup="$gender">
-                                                                           <toggleGroup>
-                                                                              <ToggleGroup fx:id="gender" />
-                                                                           </toggleGroup>
-                                                                        </JFXRadioButton>
-                                                                        <JFXRadioButton fx:id="female" onAction="#calculate" text="weiblich" textFill="#dded9c" toggleGroup="$gender" />
-                                                                     </children>
-                                                                  </HBox>
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox spacing="10.0">
-                                                               <children>
-                                                                  <Label prefWidth="80.0" text="Kohlenhydrate" textFill="#dded9c" />
-                                                                  <Label fx:id="carbs" text="" textFill="#dded9c" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox spacing="65.0">
-                                                         <children>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefWidth="65.0" text="Alter" textFill="#dded9c" />
-                                                                  <NumberField fx:id="age" focusColor="#fe2712" onKeyTyped="#calculate" prefWidth="50.0" unFocusColor="#b2d732" />
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox spacing="10.0">
-                                                               <children>
-                                                                  <Label prefWidth="80.0" text="Fett" textFill="#dded9c" />
-                                                                  <Label fx:id="fat" text="" textFill="#dded9c" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </HBox>
-                                                      <HBox spacing="65.0">
-                                                         <children>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefWidth="65.0" text="Größe" textFill="#dded9c" />
-                                                                  <DecimalNumberField fx:id="size" focusColor="#fe2712" onKeyTyped="#calculate" prefWidth="50.0" unFocusColor="#b2d732" />
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox spacing="10.0">
-                                                               <children>
-                                                                  <Label prefWidth="80.0" text="Protein" textFill="#dded9c" />
-                                                                  <Label fx:id="protein" text="" textFill="#dded9c" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox spacing="65.0">
-                                                         <children>
-                                                            <HBox spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefWidth="65.0" text="Gewicht" textFill="#dded9c" />
-                                                                  <DecimalNumberField fx:id="weight" focusColor="#fe2712" onKeyTyped="#calculate" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox spacing="10.0" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox spacing="65.0">
-                                                         <children>
-                                                            <HBox spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefWidth="65.0" text="Tätigkeit" textFill="#dded9c" />
-                                                                  <JFXComboBox fx:id="activity" focusColor="#fe2712" onAction="#palValueChoice" prefHeight="25.0" prefWidth="300.0" unFocusColor="#b2d732" />
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox spacing="10.0" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox spacing="65.0">
-                                                         <children>
-                                                            <HBox spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefWidth="65.0" text="PAL-Wert" textFill="#dded9c" />
-                                                                  <JFXComboBox fx:id="palvalue" focusColor="#fe2712" onAction="#calculate" prefHeight="25.0" prefWidth="69.0" unFocusColor="#b2d732" />
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox spacing="10.0" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox spacing="65.0">
-                                                         <children>
-                                                            <HBox spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefWidth="65.0" text="Training" textFill="#dded9c" />
-                                                                  <JFXCheckBox fx:id="sportActivity" checkedColor="#b2d732" onAction="#calculate" text="mind. 3x Training pro Woche" textFill="#dded9c" unCheckedColor="#b2d732" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                      </HBox>
-                                                   </children>
+                                                                        <HBox spacing="65.0">
+                                                                            <children>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefWidth="65.0" text="Vorname" textFill="#dded9c" />
+                                                                                        <JFXTextField fx:id="firstname" focusColor="#fe2712" prefWidth="200.0" unFocusColor="#b2d732" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <HBox spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label prefWidth="80.0" text="BMI" textFill="#dded9c" />
+                                                                                        <Label fx:id="bmi" text="" textFill="#dded9c" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <HBox spacing="65.0">
+                                                                            <children>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefWidth="65.0" text="Nachname" textFill="#dded9c" />
+                                                                                        <JFXTextField fx:id="lastname" focusColor="#fe2712" prefWidth="200.0" unFocusColor="#b2d732" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <HBox spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label prefWidth="80.0" text="Kalorien" textFill="#dded9c" />
+                                                                                        <Label fx:id="calories" text="" textFill="#dded9c" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <HBox spacing="65.0">
+                                                                            <children>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="65.0" text="Geschlecht" textFill="#dded9c" />
+                                                                                        <HBox prefWidth="150.0" spacing="15.0">
+                                                                                            <children>
+                                                                                                <JFXRadioButton fx:id="male" onAction="#calculate" selected="true" text="männlich" textFill="#dded9c" toggleGroup="$gender">
+                                                                                                    <toggleGroup>
+                                                                                                        <ToggleGroup fx:id="gender" />
+                                                                                                    </toggleGroup>
+                                                                                                </JFXRadioButton>
+                                                                                                <JFXRadioButton fx:id="female" onAction="#calculate" text="weiblich" textFill="#dded9c" toggleGroup="$gender" />
+                                                                                            </children>
+                                                                                        </HBox>
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <HBox spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label prefWidth="80.0" text="Kohlenhydrate" textFill="#dded9c" />
+                                                                                        <Label fx:id="carbs" text="" textFill="#dded9c" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <HBox spacing="65.0">
+                                                                            <children>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefWidth="65.0" text="Alter" textFill="#dded9c" />
+                                                                                        <NumberField fx:id="age" focusColor="#fe2712" onKeyReleased="#calculate" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <HBox spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label prefWidth="80.0" text="Fett" textFill="#dded9c" />
+                                                                                        <Label fx:id="fat" text="" textFill="#dded9c" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                            <VBox.margin>
+                                                                                <Insets />
+                                                                            </VBox.margin>
+                                                                        </HBox>
+                                                                        <HBox spacing="65.0">
+                                                                            <children>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefWidth="65.0" text="Größe" textFill="#dded9c" />
+                                                                                        <DecimalNumberField fx:id="size" focusColor="#fe2712" onKeyReleased="#calculate" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <HBox spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label prefWidth="80.0" text="Protein" textFill="#dded9c" />
+                                                                                        <Label fx:id="protein" text="" textFill="#dded9c" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <HBox spacing="65.0">
+                                                                            <children>
+                                                                                <HBox spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefWidth="65.0" text="Gewicht" textFill="#dded9c" />
+                                                                                        <DecimalNumberField fx:id="weight" focusColor="#fe2712" onKeyReleased="#calculate" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <HBox spacing="10.0" />
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <HBox spacing="65.0">
+                                                                            <children>
+                                                                                <HBox spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefWidth="65.0" text="Tätigkeit" textFill="#dded9c" />
+                                                                                        <JFXComboBox fx:id="activity" focusColor="#fe2712" onAction="#palValueChoice" prefHeight="25.0" prefWidth="300.0" unFocusColor="#b2d732" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <HBox spacing="10.0" />
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <HBox spacing="65.0">
+                                                                            <children>
+                                                                                <HBox spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefWidth="65.0" text="PAL-Wert" textFill="#dded9c" />
+                                                                                        <JFXComboBox fx:id="palvalue" focusColor="#fe2712" onAction="#calculate" prefHeight="25.0" prefWidth="69.0" unFocusColor="#b2d732" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <HBox spacing="10.0" />
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <HBox spacing="65.0">
+                                                                            <children>
+                                                                                <HBox spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefWidth="65.0" text="Training" textFill="#dded9c" />
+                                                                                        <JFXCheckBox fx:id="sportActivity" checkedColor="#b2d732" onAction="#calculate" text="mind. 3x Training pro Woche" textFill="#dded9c" unCheckedColor="#b2d732" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                        </HBox>
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="108.0" prefWidth="614.0" spacing="30.0">
+                                                    <children>
+                                                        <JFXButton buttonType="RAISED" onAction="#save" prefHeight="60.0" prefWidth="120.0" ripplerFill="#383838" styleClass="main-button" text="Speichern" textAlignment="CENTER">
+                                                            <font>
+                                                                <Font size="16.0" />
+                                                            </font>
+                                                        </JFXButton>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children></AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab>
+                            <graphic>
+                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/food.png" />
+                                    </image></ImageView>
+                            </graphic>
+                            <content>
+                                <AnchorPane prefHeight="524.0" prefWidth="726.0">
+                                    <children>
+                                        <VBox alignment="CENTER" prefHeight="411.0" prefWidth="726.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <HBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="600.0">
+                                                    <VBox.margin>
+                                                        <Insets left="50.0" right="50.0" />
+                                                    </VBox.margin>
+                                                    <children>
+                                                        <HBox spacing="5.0">
+                                                            <children>
+                                                                <VBox alignment="CENTER" prefHeight="145.0" prefWidth="600.0" spacing="15.0">
+                                                                    <children>
+                                                                        <HBox prefHeight="25.0" prefWidth="600.0" spacing="50.0">
+                                                                            <children>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Mahlzeit" textFill="#dded9c" />
+                                                                                        <JFXComboBox fx:id="meals" focusColor="#fe2712" prefHeight="25.0" prefWidth="150.0" unFocusColor="#b2d732" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="Deckt deinen Tagesbedarf um" textFill="#dded9c" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <HBox prefHeight="25.0" prefWidth="300.0" spacing="50.0">
+                                                                            <children>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Kohlenhydrate" textFill="#dded9c" />
+                                                                                        <DecimalNumberField fx:id="carb_input" focusColor="#fe2712" onKeyReleased="#calculateCalories" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label fx:id="carbs_daily" contentDisplay="CENTER" prefHeight="17.0" prefWidth="40.0" text="0.00" textFill="#dded9c" />
+                                                                                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="\%" textFill="#dded9c" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <HBox prefHeight="25.0" prefWidth="300.0" spacing="50.0">
+                                                                            <children>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Fett" textFill="#dded9c" />
+                                                                                        <DecimalNumberField fx:id="fat_input" focusColor="#fe2712" onKeyReleased="#calculateCalories" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label fx:id="fat_daily" contentDisplay="CENTER" prefHeight="17.0" prefWidth="40.0" text="0.00" textFill="#dded9c" />
+                                                                                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="\%" textFill="#dded9c" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <HBox prefHeight="25.0" prefWidth="300.0" spacing="50.0">
+                                                                            <children>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Protein" textFill="#dded9c" />
+                                                                                        <DecimalNumberField fx:id="protein_input" focusColor="#fe2712" onKeyReleased="#calculateCalories" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label fx:id="protein_daily" contentDisplay="CENTER" prefHeight="17.0" prefWidth="40.0" text="0.00" textFill="#dded9c" />
+                                                                                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="\%" textFill="#dded9c" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <HBox prefHeight="25.0" prefWidth="300.0" spacing="50.0">
+                                                                            <children>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Kalorien" textFill="#dded9c" />
+                                                                                        <Label fx:id="calories_sum" contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" textFill="#dded9c" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                                    <children>
+                                                                                        <Label fx:id="calories_daily" contentDisplay="CENTER" prefHeight="17.0" prefWidth="40.0" text="0.00" textFill="#dded9c" />
+                                                                                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="\%" textFill="#dded9c" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                        </HBox>
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="108.0" prefWidth="614.0" spacing="30.0">
+                                                    <children>
+                                                        <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="120.0" ripplerFill="#383838" styleClass="main-button" text="Speichern" textAlignment="CENTER">
+                                                            <font>
+                                                                <Font size="16.0" />
+                                                            </font>
+                                                        </JFXButton>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab>
+                            <graphic>
+                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/strong.png" />
+                                    </image></ImageView>
+                            </graphic>
+                            <content>
+                                <AnchorPane prefHeight="524.0" prefWidth="726.0">
+                                    <children>
+                                        <VBox alignment="CENTER" layoutX="215.0" prefHeight="524.0" prefWidth="585.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <HBox alignment="CENTER">
+                                                    <VBox.margin>
+                                                        <Insets left="50.0" right="50.0" />
+                                                    </VBox.margin>
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="177.0" prefWidth="265.0" spacing="15.0">
+                                                            <children>
+                                                                <HBox prefHeight="25.0" prefWidth="600.0" spacing="50.0">
+                                                                    <children>
+                                                                        <HBox prefWidth="330.0" spacing="10.0">
+                                                                            <children>
+                                                                                <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="96.0" textFill="#dded9c" />
+                                                                                <JFXDatePicker defaultColor="#b2d732" />
+                                                                            </children>
+                                                                        </HBox>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox prefHeight="25.0" prefWidth="600.0" spacing="50.0">
+                                                                    <children>
+                                                                        <HBox prefWidth="330.0" spacing="10.0">
+                                                                            <children>
+                                                                                <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Kraftraining" textFill="#dded9c" />
+                                                                                <JFXComboBox fx:id="training" focusColor="#fe2712" prefHeight="25.0" prefWidth="150.0" unFocusColor="#b2d732" />
+                                                                            </children>
+                                                                        </HBox>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox prefHeight="25.0" prefWidth="300.0" spacing="50.0">
+                                                                    <children>
+                                                                        <HBox prefWidth="330.0" spacing="10.0">
+                                                                            <children>
+                                                                                <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Cardiotraining" textFill="#dded9c" />
+                                                                                <JFXComboBox fx:id="cardio" focusColor="#fe2712" prefHeight="25.0" prefWidth="150.0" unFocusColor="#b2d732" />
+                                                                            </children>
+                                                                        </HBox>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox prefWidth="330.0" spacing="10.0">
+                                                                    <children>
+                                                                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Dauer" textFill="#dded9c" />
+                                                                        <NumberField fx:id="duration_input" focusColor="#fe2712" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
+                                                                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="50.0" text="Minuten" textFill="#dded9c" />
+                                                                    </children>
+                                                                </HBox>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="108.0" prefWidth="614.0" spacing="30.0">
+                                                    <children>
+                                                        <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="120.0" ripplerFill="#383838" styleClass="main-button" text="Speichern" textAlignment="CENTER">
+                                                            <font>
+                                                                <Font size="16.0" />
+                                                            </font>
+                                                        </JFXButton>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab>
+                            <graphic>
+                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/statistics.png" />
+                                    </image></ImageView>
+                            </graphic>
+                            <content>
+                                <AnchorPane prefHeight="200.0" prefWidth="799.0">
+                                    <children>
+                                        <HBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <VBox prefHeight="509.0">
+                                                    <children>
+                                                        <HBox prefHeight="80.0" prefWidth="778.0">
+                                                            <children>
+                                                                <Label text="Label" />
+                                                                <Label text="Label" />
+                                                                <Label text="Label" />
+                                                            </children>
+                                                        </HBox>
+                                                        <LineChart prefHeight="400.0" prefWidth="548.0">
+                                                            <xAxis>
+                                                                <CategoryAxis side="BOTTOM" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis side="LEFT" />
+                                                            </yAxis>
+                                                        </LineChart>
+                                                        <Label text="Label" />
+                                                    </children>
                                                 </VBox>
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </HBox>
-                                    <HBox alignment="CENTER" prefHeight="108.0" prefWidth="614.0" spacing="30.0">
-                                       <children>
-                                          <JFXButton onAction="#calculate" prefHeight="60.0" prefWidth="120.0" styleClass="main-button" text="Berechnen" textAlignment="CENTER">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <JFXButton buttonType="RAISED" onAction="#save" prefHeight="60.0" prefWidth="120.0" ripplerFill="#383838" styleClass="main-button" text="Speichern" textAlignment="CENTER">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </JFXButton>
-                                       </children>
-                                    </HBox>
-                                    <JFXDatePicker fx:id="datepicker1" defaultColor="#b2d732" />
-                                 </children>
-                              </VBox>
-                           </children></AnchorPane>
-                     </content>
-                  </Tab>
-                  <Tab>
-                     <graphic>
-                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/food.png" />
-                           </image></ImageView>
-                     </graphic>
-                     <content>
-                        <AnchorPane prefHeight="524.0" prefWidth="726.0">
-                           <children>
-                              <VBox alignment="CENTER" prefHeight="411.0" prefWidth="726.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <HBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="600.0">
-                                       <VBox.margin>
-                                          <Insets left="50.0" right="50.0" />
-                                       </VBox.margin>
-                                       <children>
-                                          <HBox spacing="5.0">
-                                             <children>
-                                                <VBox alignment="CENTER" prefHeight="145.0" prefWidth="600.0" spacing="15.0">
-                                                   <children>
-                                                      <HBox prefHeight="25.0" prefWidth="600.0" spacing="50.0">
-                                                         <children>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Mahlzeit" textFill="#dded9c" />
-                                                                  <JFXComboBox fx:id="meals" focusColor="#fe2712" prefHeight="25.0" prefWidth="150.0" unFocusColor="#b2d732" />
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="Deckt deinen Tagesbedarf um" textFill="#dded9c" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox prefHeight="25.0" prefWidth="300.0" spacing="50.0">
-                                                         <children>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Kohlenhydrate" textFill="#dded9c" />
-                                                                  <DecimalNumberField fx:id="carb_input" focusColor="#fe2712" onKeyReleased="#calculateCalories" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label fx:id="carbs_daily" contentDisplay="CENTER" prefHeight="17.0" prefWidth="30.0" text="0.00" textFill="#dded9c" />
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="\%" textFill="#dded9c" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox prefHeight="25.0" prefWidth="300.0" spacing="50.0">
-                                                         <children>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Fett" textFill="#dded9c" />
-                                                                  <DecimalNumberField fx:id="fat_input" focusColor="#fe2712" onKeyReleased="#calculateCalories" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label fx:id="fat_daily" contentDisplay="CENTER" prefHeight="17.0" prefWidth="30.0" text="0.00" textFill="#dded9c" />
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="\%" textFill="#dded9c" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox prefHeight="25.0" prefWidth="300.0" spacing="50.0">
-                                                         <children>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Protein" textFill="#dded9c" />
-                                                                  <DecimalNumberField fx:id="protein_input" focusColor="#fe2712" onKeyReleased="#calculateCalories" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label fx:id="protein_daily" contentDisplay="CENTER" prefHeight="17.0" prefWidth="30.0" text="0.00" textFill="#dded9c" />
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="\%" textFill="#dded9c" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox prefHeight="25.0" prefWidth="300.0" spacing="50.0">
-                                                         <children>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Kalorien" textFill="#dded9c" />
-                                                                  <Label fx:id="calories_sum" contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" textFill="#dded9c" />
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox prefWidth="330.0" spacing="10.0">
-                                                               <children>
-                                                                  <Label fx:id="calories_daily" contentDisplay="CENTER" prefHeight="17.0" prefWidth="100.0" text="0.00" textFill="#dded9c" />
-                                                                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="194.0" text="\%" textFill="#dded9c" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                      </HBox>
-                                                   </children>
-                                                </VBox>
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </HBox>
-                                    <HBox alignment="CENTER" prefHeight="108.0" prefWidth="614.0" spacing="30.0">
-                                       <children>
-                                          <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="120.0" ripplerFill="#383838" styleClass="main-button" text="Speichern" textAlignment="CENTER">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </JFXButton>
-                                       </children>
-                                    </HBox>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </Tab>
-                  <Tab>
-                     <graphic>
-                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/strong.png" />
-                           </image></ImageView>
-                     </graphic>
-                     <content>
-                        <AnchorPane prefHeight="524.0" prefWidth="726.0">
-                           <children>
-                              <VBox alignment="CENTER" layoutX="215.0" prefHeight="524.0" prefWidth="585.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <HBox alignment="CENTER">
-                                       <VBox.margin>
-                                          <Insets left="50.0" right="50.0" />
-                                       </VBox.margin>
-                                       <children>
-                                          <VBox alignment="CENTER" prefHeight="177.0" prefWidth="265.0" spacing="15.0">
-                                             <children>
-                                                <HBox prefHeight="25.0" prefWidth="600.0" spacing="50.0">
-                                                   <children>
-                                                      <HBox prefWidth="330.0" spacing="10.0">
-                                                         <children>
-                                                            <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" textFill="#dded9c" />
-                                                            <JFXDatePicker defaultColor="#b2d732" />
-                                                         </children>
-                                                      </HBox>
-                                                   </children>
-                                                </HBox>
-                                                <HBox prefHeight="25.0" prefWidth="600.0" spacing="50.0">
-                                                   <children>
-                                                      <HBox prefWidth="330.0" spacing="10.0">
-                                                         <children>
-                                                            <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Kraftraining" textFill="#dded9c" />
-                                                            <JFXComboBox fx:id="training" focusColor="#fe2712" prefHeight="25.0" prefWidth="150.0" unFocusColor="#b2d732" />
-                                                         </children>
-                                                      </HBox>
-                                                   </children>
-                                                </HBox>
-                                                <HBox prefHeight="25.0" prefWidth="300.0" spacing="50.0">
-                                                   <children>
-                                                      <HBox prefWidth="330.0" spacing="10.0">
-                                                         <children>
-                                                            <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Cardiotraining" textFill="#dded9c" />
-                                                            <JFXComboBox fx:id="cardio" focusColor="#fe2712" prefHeight="25.0" prefWidth="150.0" unFocusColor="#b2d732" />
-                                                         </children>
-                                                      </HBox>
-                                                   </children>
-                                                </HBox>
-                                                <HBox prefWidth="330.0" spacing="10.0">
-                                                   <children>
-                                                      <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="90.0" text="Dauer" textFill="#dded9c" />
-                                                      <NumberField fx:id="duration_input" focusColor="#fe2712" prefHeight="25.0" prefWidth="50.0" unFocusColor="#b2d732" />
-                                                      <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="50.0" text="Minuten" textFill="#dded9c" />
-                                                   </children>
-                                                </HBox>
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                    </HBox>
-                                    <HBox alignment="CENTER" prefHeight="108.0" prefWidth="614.0" spacing="30.0">
-                                       <children>
-                                          <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="120.0" ripplerFill="#383838" styleClass="main-button" text="Speichern" textAlignment="CENTER">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </JFXButton>
-                                       </children>
-                                    </HBox>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </Tab>
-                  <Tab>
-                     <graphic>
-                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/statistics.png" />
-                           </image></ImageView>
-                     </graphic>
-                     <content>
-                        <AnchorPane prefHeight="200.0" prefWidth="799.0">
-                           <children>
-                              <HBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <VBox prefHeight="509.0">
-                                       <children>
-                                          <HBox prefHeight="80.0" prefWidth="778.0">
-                                             <children>
-                                                <Label text="Label" />
-                                                <Label text="Label" />
-                                                <Label text="Label" />
-                                             </children>
-                                          </HBox>
-                                          <LineChart prefHeight="400.0" prefWidth="548.0">
-                                            <xAxis>
-                                              <CategoryAxis side="BOTTOM" />
-                                            </xAxis>
-                                            <yAxis>
-                                              <NumberAxis side="LEFT" />
-                                            </yAxis>
-                                          </LineChart>
-                                          <Label text="Label" />
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </HBox>
-                           </children></AnchorPane>
-                     </content>
-                  </Tab>
-                  <Tab>
-                     <graphic>
-                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/calendar.png" />
-                           </image></ImageView>
-                     </graphic>
-                     <content>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-                     </content>
-                  </Tab>
-               </tabs>
-            </JFXTabPane>
-         </center>
-         <top>
-            <MenuBar BorderPane.alignment="CENTER">
-              <menus>
-                <Menu mnemonicParsing="false" text="File">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-         </top>
-      </BorderPane>
-   </children>
+                                            </children>
+                                        </HBox>
+                                    </children></AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab>
+                            <graphic>
+                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/calendar.png" />
+                                    </image></ImageView>
+                            </graphic>
+                            <content>
+                                <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                            </content>
+                        </Tab>
+                    </tabs>
+                </JFXTabPane>
+            </center>
+            <top>
+                <MenuBar BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Close" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+        </BorderPane>
+    </children>
 </StackPane>
