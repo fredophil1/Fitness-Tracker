@@ -37,31 +37,43 @@ public class DBLogic {
 
     }
 
-    public int dbInsertClient(String firstname, String lastname, int age, int size, Double weight,String activity,Double palvalue,boolean sportActivity) {
+    public int dbInsertClient(String firstname, String lastname, int age, int size, Double weight, String activity, Double palvalue, boolean sportActivity) {
 
         try {
             Statement stmt = con.createStatement();
             return stmt.executeUpdate("INSERT INTO client (Vornamedb,Nachnamedb,Alterdb,Groeßedb,Gewichtdb,Taetigkeitdb,Palvaluedb,Trainingdb) VALUES ('" + firstname + "', '" + lastname + "', '" + age + "', '" + size + "','" + weight + "','" + activity + "','" + palvalue + "','" + sportActivity + "')");
 
         } catch (SQLException e) {
-            System.out.println("Daten Können nicht geschrieben werden");
             e.printStackTrace();
             return 0;
         }
 
     }
 
-    public int dbInsertMeals(String meal,double mealCarbs,double mealFat,double mealProtein,double mealCalories) {
+    public int dbInsertMeals(String meal, double mealCarbs, double mealFat, double mealProtein, double mealCalories) {
 
         try {
             Statement stmt = con.createStatement();
             return stmt.executeUpdate("INSERT INTO meals (Mahlzeitdb,Kohlenhydratedb,Fettdb,Proteindb,Kaloriendb) VALUES ('" + meal + "', '" + mealCarbs + "', '" + mealFat + "', '" + mealProtein + "','" + mealCalories + "')");
 
         } catch (SQLException e) {
-            System.out.println("Daten Können nicht geschrieben werden");
             e.printStackTrace();
             return 0;
         }
 
     }
+
+    public int dbInsertTraining(String lifting, String cardio, int trainingDuration) {
+
+        try {
+            Statement stmt = con.createStatement();
+            return stmt.executeUpdate("INSERT INTO training (Kraftrainingdb,Cardiodb,Trainingsdauer) VALUES ('" + lifting + "', '" + cardio + "', '" + trainingDuration + "')");
+
+        } catch (SQLException e) {
+            System.out.println("Daten Können nicht geschrieben werden");
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
 }

@@ -33,9 +33,9 @@ public class Controller {
 
     ObservableList<String> mealList = FXCollections.observableArrayList("Frühstück", "Mittagessen", "Abendessen", "Snack");
 
-    ObservableList<String> cardioList = FXCollections.observableArrayList("Crosstrainer", "Joggen", "Radfahren", "Schwimmen", "Stairmaster");
+    ObservableList<String> cardioList = FXCollections.observableArrayList("---------","Crosstrainer", "Joggen", "Radfahren", "Schwimmen", "Stairmaster");
 
-    ObservableList<String> trainingList = FXCollections.observableArrayList("Arme", "Beine", "Brust", "Rücken", "Schultern");
+    ObservableList<String> trainingList = FXCollections.observableArrayList("---------","Arme", "Beine", "Brust", "Rücken", "Schultern");
 
 
     //Views
@@ -49,6 +49,8 @@ public class Controller {
     private TextField size;
     @FXML
     private TextField weight;
+    @FXML
+    private TextField duration_input;
 
     @FXML
     private DecimalNumberField carb_input;
@@ -182,6 +184,16 @@ public class Controller {
         DBLogic db = new DBLogic();
         db.connection();
         db.dbInsertMeals(String.valueOf(meals.getValue()),Double.parseDouble(carb_input.getText()),Double.parseDouble(fat_input.getText()),Double.parseDouble(protein_input.getText()),Double.parseDouble(calories_sum.getText()));
+        db.connectionClose();
+    }
+
+    @FXML
+    private void saveTraining(){
+
+        DBLogic db = new DBLogic();
+        db.connection();
+        db.dbInsertTraining(String.valueOf(cardio.getValue()), String.valueOf(training.getValue()), Integer.parseInt(duration_input.getText()));
+
         db.connectionClose();
     }
 
