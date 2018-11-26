@@ -1,9 +1,10 @@
 package database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import static javax.swing.text.html.HTML.Tag.SELECT;
 
 public class DBLogic {
 
@@ -94,7 +95,6 @@ public class DBLogic {
 
         try {
             Statement stmt = con.createStatement();
-         //   return stmt.executeUpdate("UPDATE nutrition (bmi,carbsdbtgl,fettdbtgl,proteindbtgl,caloriesdbtgl) SET ('" + bmi + "', '" + carbs + "', '" + fat + "', '" + protein + "', '" + calories + "')WHERE clientnutid = 1");
             return  stmt.executeUpdate("UPDATE `nutrition` SET `fettdbtgl`= + '" +fat+"',`proteindbtgl`= + '"+protein+"',`carbsdbtgl`= + '"+carbs+"',`caloriesdbtgl`= + '"+calories+"',`bmi`= + '"+bmi+"' WHERE clientnutid = 1");
         } catch (SQLException e) {
 
@@ -103,5 +103,24 @@ public class DBLogic {
         }
     }
 
+    public String dbSelectNutrition(){
+
+        try {
+            Statement stmt = con.createStatement();
+            ResultSet rs;
+            rs = stmt.executeQuery("SELECT`fettdbtgl` FROM `nutrition` WHERE clientnutid=1");
+
+            //  double asd = rs.getDouble("fettdbtgl");
+            // System.out.println(asd);
+
+            System.out.println("hi");
+
+            return "hi2";
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+            return "hi";
+        }
+    }
 
 }

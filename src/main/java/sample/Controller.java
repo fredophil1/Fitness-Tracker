@@ -204,6 +204,7 @@ public class Controller {
         DBLogic db = new DBLogic();
         db.connection();
         db.dbUpdateNutrition(caloriesLogic.getBmi(),caloriesLogic.getCarbs(),caloriesLogic.getFat(),caloriesLogic.getProtein(),caloriesLogic.getCalories());
+        db.dbSelectNutrition();
         db.connectionClose();
 
     }
@@ -214,7 +215,7 @@ public class Controller {
 
         DBLogic db = new DBLogic();
         db.connection();
-        //db.dbSelectNutrition();
+
 
         caloriesLogic.setAge(Double.parseDouble(StringUtils.defaultIfEmpty(age.getText(), "0")));
         caloriesLogic.setSize(Double.parseDouble(StringUtils.defaultIfEmpty(size.getText(), "0")));
