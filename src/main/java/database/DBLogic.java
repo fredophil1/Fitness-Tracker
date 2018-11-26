@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class DBLogic {
 
-    private static final String USERNAME = "freddi";
+    private static final String USERNAME = "root";
     private static final String PASSWORD = "";
     private static final String CONNECTOR = "jdbc:mysql://localhost/FitnessTrackerDB";
 
@@ -70,10 +70,38 @@ public class DBLogic {
             return stmt.executeUpdate("INSERT INTO training (Kraftrainingdb,Cardiodb,Trainingsdauer) VALUES ('" + lifting + "', '" + cardio + "', '" + trainingDuration + "')");
 
         } catch (SQLException e) {
-            System.out.println("Daten Können nicht geschrieben werden");
             e.printStackTrace();
             return 0;
         }
     }
+
+
+    public int dbInsertNutrition(double bmi, double carbs, double fat, double protein, double calories){
+
+        try {
+            Statement stmt = con.createStatement();
+            return stmt.executeUpdate("INSERT INTO nutrition (bmi,carbsdbtgl,fettdbtgl,proteindbtgl,caloriesdbtgl) VALUES ('" + bmi + "', '" + carbs + "', '" + fat + "', '" + protein + "', '" + calories + "')");
+
+        } catch (SQLException e) {
+            System.out.println("Daten Können nicht geschrieben werden");
+            e.printStackTrace();
+            return 0;
+        }
+
+    }
+
+    public int dbUpdateNutrition(double bmi, double carbs, double fat, double protein, double calories) {
+
+        try {
+            Statement stmt = con.createStatement();
+         //   return stmt.executeUpdate("UPDATE nutrition (bmi,carbsdbtgl,fettdbtgl,proteindbtgl,caloriesdbtgl) SET ('" + bmi + "', '" + carbs + "', '" + fat + "', '" + protein + "', '" + calories + "')WHERE clientnutid = 1");
+            return  stmt.executeUpdate("UPDATE `nutrition` SET `fettdbtgl`= + '" +fat+"',`proteindbtgl`= + '"+protein+"',`carbsdbtgl`= + '"+carbs+"',`caloriesdbtgl`= + '"+calories+"',`bmi`= + '"+bmi+"' WHERE clientnutid = 1");
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
 
 }

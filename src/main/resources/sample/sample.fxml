@@ -212,6 +212,11 @@
                                                                 <Font size="16.0" />
                                                             </font>
                                                         </JFXButton>
+                                          <JFXButton buttonType="RAISED" layoutX="350.0" layoutY="30.0" onAction="#update" prefHeight="60.0" prefWidth="120.0" ripplerFill="#383838" styleClass="main-button" text="Aktualisieren" textAlignment="CENTER">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </JFXButton>
                                                     </children>
                                                 </HBox>
                                             </children>

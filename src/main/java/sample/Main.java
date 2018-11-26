@@ -13,12 +13,6 @@ public class Main extends Application {
 
     private Stage primaryStage;
 
-    //HGqCVfgwu8VB8pg4 freddi
-
-    // private static final String USERNAME = "freddi";
-    // private static final String PASSWORD = "";
-    //  private static final String CONNECTOR = "jdbc:mysql://localhost/FitnessTrackerDB";
-
     @Override
     public void start(Stage primaryStage) {
 

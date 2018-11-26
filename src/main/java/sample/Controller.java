@@ -173,6 +173,7 @@ public class Controller {
 
         db.connection();
         db.dbInsertClient(firstname.getText(),lastname.getText(),Integer.parseInt(age.getText()),Integer.parseInt(size.getText()),Double.parseDouble(weight.getText()),String.valueOf(activity.getValue()),palvalueDouble,sportActivity.isSelected());
+        db.dbInsertNutrition(caloriesLogic.getBmi(),caloriesLogic.getCarbs(),caloriesLogic.getFat(),caloriesLogic.getProtein(),caloriesLogic.getCalories());
         db.connectionClose();
 
     }
@@ -197,10 +198,23 @@ public class Controller {
         db.connectionClose();
     }
 
+    // Button Update/ Aktualisiert die Daten des Clienten in der DB
+    @FXML
+    private void update(){
+        DBLogic db = new DBLogic();
+        db.connection();
+        db.dbUpdateNutrition(caloriesLogic.getBmi(),caloriesLogic.getCarbs(),caloriesLogic.getFat(),caloriesLogic.getProtein(),caloriesLogic.getCalories());
+        db.connectionClose();
 
-    // Button Controller Berechnen: berechnet BMI, Kalorien, Fett, Kohlenhydrate Protein
+    }
+
+    // Berechnet BMI, Kalorien, Fett, Kohlenhydrate Protein live
     @FXML
     private void calculate() {
+
+        DBLogic db = new DBLogic();
+        db.connection();
+        //db.dbSelectNutrition();
 
         caloriesLogic.setAge(Double.parseDouble(StringUtils.defaultIfEmpty(age.getText(), "0")));
         caloriesLogic.setSize(Double.parseDouble(StringUtils.defaultIfEmpty(size.getText(), "0")));
@@ -241,6 +255,8 @@ public class Controller {
         protein.setText(String.valueOf(caloriesLogic.getProtein()));
 
         updateDailyNeed();
+
+        db.connectionClose();
     }
 
     @FXML
@@ -307,5 +323,7 @@ public class Controller {
         if (dailyCalories > 0) {
             calories_daily.setText(String.valueOf(dailyCaloriesPercentage));
         }
+
+
     }
 }
