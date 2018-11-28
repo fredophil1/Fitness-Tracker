@@ -1,5 +1,7 @@
 package database;
 
+import sample.Controller;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -103,23 +105,45 @@ public class DBLogic {
         }
     }
 
-    public String dbSelectNutrition(){
+    public int dbSelectNutrition(){
+
+        ArrayList <String> list = new ArrayList<>();
+        list.clear();
+
 
         try {
             Statement stmt = con.createStatement();
             ResultSet rs;
-            rs = stmt.executeQuery("SELECT`fettdbtgl` FROM `nutrition` WHERE clientnutid=1");
+            rs = stmt.executeQuery("SELECT * FROM `nutrition` WHERE clientnutid=1");
 
-            //  double asd = rs.getDouble("fettdbtgl");
-            // System.out.println(asd);
 
-            System.out.println("hi");
+            while (rs.next()) {
 
-            return "hi2";
+
+                list.add(String.valueOf(rs.getDouble("fettdbtgl")));
+                list.add(String.valueOf(rs.getDouble("carbsdbtgl")));
+                list.add(String.valueOf(rs.getDouble("proteindbtgl")));
+                list.add(String.valueOf(rs.getDouble("caloriesdbtgl")));
+
+                Controller controller = new Controller();
+
+                controller.testmethod(list.get(1));
+
+                System.out.println(list);
+
+
+            }
+
+
+
+            rs.close();
+
+
+            return 0;
         } catch (SQLException e) {
 
             e.printStackTrace();
-            return "hi";
+            return 0;
         }
     }
 

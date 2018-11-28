@@ -207,6 +207,8 @@ public class Controller {
         db.dbSelectNutrition();
         db.connectionClose();
 
+
+
     }
 
     // Berechnet BMI, Kalorien, Fett, Kohlenhydrate Protein live
@@ -275,8 +277,8 @@ public class Controller {
 
         updateDailyNeed();
 
-      //  calories_sum.setText(String.valueOf(Math.round((carb*4.1 + fat*9.3 + protein*4.1)*100.0/100.0)));
-      //  updateDailyNeed();
+
+
 
 
     }
@@ -326,5 +328,12 @@ public class Controller {
         }
 
 
+    }
+
+    public String testmethod(String s){
+
+        //calories_daily.setText(String.valueOf(s));
+        System.out.println(s);
+        return "HI";
     }
 }
